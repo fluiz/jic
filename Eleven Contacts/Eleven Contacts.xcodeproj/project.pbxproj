@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E53A9EF52298844100721EE8 /* ElevenContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A9EF42298844100721EE8 /* ElevenContact.swift */; };
+		E53A9EF82298A3E000721EE8 /* ContactsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A9EF72298A3E000721EE8 /* ContactsDB.swift */; };
+		E53A9EFB22991F3500721EE8 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A9EFA22991F3500721EE8 /* DataHelper.swift */; };
 		E5632289229786D800ED2DD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5632288229786D800ED2DD0 /* AppDelegate.swift */; };
 		E563228B229786D800ED2DD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E563228A229786D800ED2DD0 /* ViewController.swift */; };
 		E563228E229786D800ED2DD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E563228C229786D800ED2DD0 /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E53A9EF42298844100721EE8 /* ElevenContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenContact.swift; sourceTree = "<group>"; };
+		E53A9EF72298A3E000721EE8 /* ContactsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDB.swift; sourceTree = "<group>"; };
+		E53A9EFA22991F3500721EE8 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		E5632285229786D800ED2DD0 /* Eleven Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eleven Contacts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5632288229786D800ED2DD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E563228A229786D800ED2DD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +45,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E53A9EF3229883EE00721EE8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E53A9EF42298844100721EE8 /* ElevenContact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E53A9EF62298A0E500721EE8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E563228F229786D800ED2DD0 /* Eleven_Contacts.xcdatamodeld */,
+				E53A9EF72298A3E000721EE8 /* ContactsDB.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E53A9EF922991B6B00721EE8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E53A9EFA22991F3500721EE8 /* DataHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		E563227C229786D800ED2DD0 = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +89,13 @@
 		E5632287229786D800ED2DD0 /* Eleven Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				E53A9EF62298A0E500721EE8 /* Data */,
+				E53A9EF922991B6B00721EE8 /* Helpers */,
+				E53A9EF3229883EE00721EE8 /* Model */,
 				E563229D22978A0500ED2DD0 /* Storyboards */,
 				E563229E22978A9F00ED2DD0 /* View */,
 				E5632288229786D800ED2DD0 /* AppDelegate.swift */,
 				E5632292229786DB00ED2DD0 /* Assets.xcassets */,
-				E563228F229786D800ED2DD0 /* Eleven_Contacts.xcdatamodeld */,
 				E5632297229786DB00ED2DD0 /* Info.plist */,
 				E563229F2297968B00ED2DD0 /* contacts.json */,
 			);
@@ -158,7 +191,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E53A9EF52298844100721EE8 /* ElevenContact.swift in Sources */,
 				E5632291229786D800ED2DD0 /* Eleven_Contacts.xcdatamodeld in Sources */,
+				E53A9EF82298A3E000721EE8 /* ContactsDB.swift in Sources */,
+				E53A9EFB22991F3500721EE8 /* DataHelper.swift in Sources */,
 				E563228B229786D800ED2DD0 /* ViewController.swift in Sources */,
 				E5632289229786D800ED2DD0 /* AppDelegate.swift in Sources */,
 			);

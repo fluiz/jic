@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IKd-6z-sL3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,50 +9,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Eleven Contacts-->
-        <scene sceneID="69D-Iq-mRE">
+        <!--View Controller-->
+        <scene sceneID="DlK-tT-QMw">
             <objects>
-                <tableViewController id="bap-FD-5q6" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="rAp-Yz-9jh">
+                <viewController id="anu-lR-ZXh" customClass="ViewController" customModule="Eleven_Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hEs-Ko-xmP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hNP-fF-hZD">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hNP-fF-hZD" id="7SA-lk-z77">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
-                            <outlet property="dataSource" destination="bap-FD-5q6" id="dVF-I9-hZz"/>
-                            <outlet property="delegate" destination="bap-FD-5q6" id="XZb-5w-ivk"/>
+                            <outlet property="dataSource" destination="anu-lR-ZXh" id="4gi-MS-yhE"/>
+                            <outlet property="delegate" destination="anu-lR-ZXh" id="3ec-ZN-shO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Eleven Contacts" largeTitleDisplayMode="always" id="5Vz-Lf-B9x"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8E2-4O-wt8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <navigationItem key="navigationItem" id="VLT-66-5RO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4j6-8M-BRG">
+                            <connections>
+                                <action selector="addContact:" destination="anu-lR-ZXh" id="5dt-1y-NHb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="hEs-Ko-xmP" id="ieN-Ly-xqL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uvb-Wg-rcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075" y="38"/>
+            <point key="canvasLocation" x="443.47826086956525" y="1.3392857142857142"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="c8q-AI-koJ">
+        <scene sceneID="XfS-O1-Nm8">
             <objects>
-                <navigationController id="IKd-6z-sL3" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="6Ma-oU-Ofz">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m2x-K9-ID0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="HNr-ot-dK0">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="bap-FD-5q6" kind="relationship" relationship="rootViewController" id="wSR-w0-gcZ"/>
+                        <segue destination="anu-lR-ZXh" kind="relationship" relationship="rootViewController" id="EEB-9K-xSb"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c0I-ib-5px" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rjg-Cg-5v3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="38"/>
+            <point key="canvasLocation" x="-466.66666666666669" y="1.3392857142857142"/>
         </scene>
     </scenes>
 </document>
