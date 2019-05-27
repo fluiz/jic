@@ -11,13 +11,18 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var contacts: [Contact] = []
+    var contacts: [ElevenContact] = []
+    var viewModel = ViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "Contacts"
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "contactCell")
+        
+        viewModel.delegate = self
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        viewModel.retireveContacts(context: context)
     }
 
     @IBAction func addContact(_ sender: Any) {
@@ -32,9 +37,22 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = contacts[indexPath.row].firstName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        let contact = contacts[indexPath.row] as ElevenContact
+        cell.textLabel?.text = contact.firstName
         return cell
+    }
+}
+
+extension ViewController: ViewModelDelegate {
+    func didUpdateState() {
+        switch viewModel.state {
+        case .idle:
+            contacts = viewModel.contacts!
+        case .working:
+            print("Interacting with Core Data")
+            // trigger activity widget
+        }
     }
 }
 

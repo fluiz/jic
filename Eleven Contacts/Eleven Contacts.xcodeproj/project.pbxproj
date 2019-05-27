@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E51EFA69229B8EA300C704A2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51EFA68229B8EA300C704A2 /* ViewModel.swift */; };
 		E53A9EF52298844100721EE8 /* ElevenContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A9EF42298844100721EE8 /* ElevenContact.swift */; };
 		E53A9EF82298A3E000721EE8 /* ContactsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A9EF72298A3E000721EE8 /* ContactsDB.swift */; };
-		E53A9EFB22991F3500721EE8 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A9EFA22991F3500721EE8 /* DataHelper.swift */; };
 		E5632289229786D800ED2DD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5632288229786D800ED2DD0 /* AppDelegate.swift */; };
 		E563228B229786D800ED2DD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E563228A229786D800ED2DD0 /* ViewController.swift */; };
 		E563228E229786D800ED2DD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E563228C229786D800ED2DD0 /* Main.storyboard */; };
@@ -17,12 +17,15 @@
 		E5632293229786DB00ED2DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5632292229786DB00ED2DD0 /* Assets.xcassets */; };
 		E5632296229786DB00ED2DD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5632294229786DB00ED2DD0 /* LaunchScreen.storyboard */; };
 		E56322A02297968B00ED2DD0 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = E563229F2297968B00ED2DD0 /* contacts.json */; };
+		E59DAB11229A3CB300461922 /* CodingUserInfoKeyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59DAB10229A3CB300461922 /* CodingUserInfoKeyUtils.swift */; };
+		E59DAB13229A3E0400461922 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59DAB12229A3E0400461922 /* Constants.swift */; };
+		E59DAB15229A4A1E00461922 /* ContactsDBUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59DAB14229A4A1E00461922 /* ContactsDBUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E51EFA68229B8EA300C704A2 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E53A9EF42298844100721EE8 /* ElevenContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenContact.swift; sourceTree = "<group>"; };
 		E53A9EF72298A3E000721EE8 /* ContactsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDB.swift; sourceTree = "<group>"; };
-		E53A9EFA22991F3500721EE8 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		E5632285229786D800ED2DD0 /* Eleven Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eleven Contacts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5632288229786D800ED2DD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E563228A229786D800ED2DD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +35,9 @@
 		E5632295229786DB00ED2DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5632297229786DB00ED2DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E563229F2297968B00ED2DD0 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
+		E59DAB10229A3CB300461922 /* CodingUserInfoKeyUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKeyUtils.swift; sourceTree = "<group>"; };
+		E59DAB12229A3E0400461922 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E59DAB14229A4A1E00461922 /* ContactsDBUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDBUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E51EFA67229B8E6F00C704A2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E51EFA68229B8EA300C704A2 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E53A9EF3229883EE00721EE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,7 +79,7 @@
 		E53A9EF922991B6B00721EE8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E53A9EFA22991F3500721EE8 /* DataHelper.swift */,
+				E59DAB12229A3E0400461922 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -90,10 +104,12 @@
 			isa = PBXGroup;
 			children = (
 				E53A9EF62298A0E500721EE8 /* Data */,
+				E59DAB0F229A3C8300461922 /* Extensions */,
 				E53A9EF922991B6B00721EE8 /* Helpers */,
 				E53A9EF3229883EE00721EE8 /* Model */,
 				E563229D22978A0500ED2DD0 /* Storyboards */,
 				E563229E22978A9F00ED2DD0 /* View */,
+				E51EFA67229B8E6F00C704A2 /* ViewModel */,
 				E5632288229786D800ED2DD0 /* AppDelegate.swift */,
 				E5632292229786DB00ED2DD0 /* Assets.xcassets */,
 				E5632297229786DB00ED2DD0 /* Info.plist */,
@@ -117,6 +133,15 @@
 				E563228A229786D800ED2DD0 /* ViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E59DAB0F229A3C8300461922 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E59DAB10229A3CB300461922 /* CodingUserInfoKeyUtils.swift */,
+				E59DAB14229A4A1E00461922 /* ContactsDBUtils.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,11 +217,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E53A9EF52298844100721EE8 /* ElevenContact.swift in Sources */,
+				E51EFA69229B8EA300C704A2 /* ViewModel.swift in Sources */,
 				E5632291229786D800ED2DD0 /* Eleven_Contacts.xcdatamodeld in Sources */,
 				E53A9EF82298A3E000721EE8 /* ContactsDB.swift in Sources */,
-				E53A9EFB22991F3500721EE8 /* DataHelper.swift in Sources */,
 				E563228B229786D800ED2DD0 /* ViewController.swift in Sources */,
+				E59DAB11229A3CB300461922 /* CodingUserInfoKeyUtils.swift in Sources */,
+				E59DAB15229A4A1E00461922 /* ContactsDBUtils.swift in Sources */,
 				E5632289229786D800ED2DD0 /* AppDelegate.swift in Sources */,
+				E59DAB13229A3E0400461922 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
