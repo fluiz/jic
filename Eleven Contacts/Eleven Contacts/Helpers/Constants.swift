@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: Constants
 struct App {
     static let contactEntityName = "Contact"
 }

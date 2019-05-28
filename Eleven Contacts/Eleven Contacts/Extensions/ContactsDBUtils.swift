@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+// MARK: ContactsDB Extensions
 extension ContactsDB {
     func getJsonData() -> Data? {
         if let path = Bundle.main.path(forResource: "contacts", ofType: "json") {

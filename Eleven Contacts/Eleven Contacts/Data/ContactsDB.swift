@@ -15,22 +15,23 @@ class ContactsDB {
     private let contactEntity: NSEntityDescription?
     private static let config = Config()
     
-    // Singleton shared object
+    // MARK: Singleton shared object
     static let shared: ContactsDB = {
         let instance = ContactsDB()
         return instance
     }()
     
-    // Configuration subclass
+    // MARK: Configuration subclass
     private class Config {
         var context: NSManagedObjectContext?
     }
     
-    // Public configuration func
+    // MARK: Public configuration func
     class func setup(context: NSManagedObjectContext) {
         ContactsDB.config.context = context
     }
     
+    // MARK: private init
     private init() {
         guard let checkContext = ContactsDB.config.context else {
             fatalError("Error: you must call setup method before using ContacDB.shared")
@@ -44,6 +45,7 @@ class ContactsDB {
         }
     }
     
+    // MARK: Database methods
     func createOrUpdate(contactStruct: ElevenContactStruct) {
         var managedContact: NSManagedObject? = nil
         var fetchResults: [NSManagedObject]? = []
@@ -51,7 +53,7 @@ class ContactsDB {
         
         if (entityAlreadyExists(contact: contact)) {
             // Proceed update
-            print("Updating contact \(contact.firstName) \(contact.lastName)")
+            print("Updating contact \(contact.firstName) \(contact.lastName) with id: \(contact.contactId)")
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: App.contactEntityName)
             fetchRequest.predicate = NSPredicate(format: "contactId = %@", contact.contactId)
             
@@ -66,7 +68,7 @@ class ContactsDB {
             }
         } else {
             // Proceed creation
-            print("Creating contact \(contact.firstName) \(contact.lastName)")
+            print("Creating contact \(contact.firstName) \(contact.lastName) with id: \(contact.contactId)")
             let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)!
             managedContact = NSManagedObject(entity: entity, insertInto: context)
             managedContact!.setValue(contact.firstName+contact.lastName+contact.phoneNumber, forKey: "contactId")
@@ -93,10 +95,26 @@ class ContactsDB {
         
         do {
             let results = try context.fetch(fetchRequest) as! [ElevenContact]
-            success(results)
+            let sortedResults = results.sorted(by: { $0.lastName < $1.lastName })
+            success(sortedResults)
         } catch let error as NSError {
             print("Core Data Error: \(error.debugDescription)")
             failure(error)
+        }
+    }
+    
+    func delete(_ contactId: String) {
+        print("Deleting contact with id: \(contactId)")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: App.contactEntityName)
+        fetchRequest.predicate = NSPredicate(format: "contactId = %@", contactId)
+        
+        do {
+            let test = try context.fetch(fetchRequest)
+            let objectToDelete = test[0] as! NSManagedObject
+            context.delete(objectToDelete)
+            try context.save()
+        } catch let error as NSError {
+            print("Core Data Error: \(error.debugDescription)")
         }
     }
 }

@@ -12,7 +12,7 @@ import UIKit
 
 class ElevenContact: NSManagedObject {
     
-    // MARK: - Core Data Managed Object
+    // MARK: Core Data Managed Object
     @NSManaged var contactId: String
     @NSManaged var firstName: String
     @NSManaged var lastName: String
@@ -23,6 +23,7 @@ class ElevenContact: NSManagedObject {
     @NSManaged var state: String
     @NSManaged var zipCode: String
     
+    // MARK: Convenience init
     convenience init(fromContactStruct contactStruct: ElevenContactStruct) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -32,7 +33,12 @@ class ElevenContact: NSManagedObject {
         
         self.init(entity: entity, insertInto: context)
         
-        self.contactId = contactStruct.contactId
+        if (contactStruct.contactId == "") {
+            self.contactId = String(Int.random(in: 0 ..< 999999)) + contactStruct.firstName + String(Int.random(in: 0 ..< 999999))
+        } else {
+            self.contactId = contactStruct.contactId
+        }
+        
         self.firstName = contactStruct.firstName
         self.lastName = contactStruct.lastName
         self.phoneNumber = contactStruct.phoneNumber
@@ -56,6 +62,7 @@ class ElevenContact: NSManagedObject {
     }
 }
 
+// MARK: Codable structs
 public struct ContactListStruct: Codable {
     let contacts: [ElevenContactStruct]
     

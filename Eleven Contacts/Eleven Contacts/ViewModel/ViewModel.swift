@@ -18,6 +18,7 @@ protocol ViewModelDelegate: class {
     func didUpdateState()
 }
 
+// MARK: ViewModel for TableView
 class ViewModel {
     weak var delegate: ViewModelDelegate?
     
@@ -41,11 +42,11 @@ class ViewModel {
         })
     }
     
-    func upsertContact(context: NSManagedObjectContext, contact: ElevenContact) {
+    func upsertContact(context: NSManagedObjectContext, contact: ElevenContactStruct) {
         state = .working
         ContactsDB.setup(context: context)
         let contactsDB = ContactsDB.shared
-        contactsDB.createOrUpdate(contactStruct: contact.getElevenContactStruct())
+        contactsDB.createOrUpdate(contactStruct: contact)
         state = .idle
     }
 }
