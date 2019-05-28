@@ -49,4 +49,12 @@ class ViewModel {
         contactsDB.createOrUpdate(contactStruct: contact)
         state = .idle
     }
+    
+    func delete(context: NSManagedObjectContext, contactId: String) {
+        state = .working
+        ContactsDB.setup(context: context)
+        let contactsDB = ContactsDB.shared
+        contactsDB.delete(contactId)
+        state = .idle
+    }
 }

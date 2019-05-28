@@ -18,6 +18,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Contacts"
+        navigationItem.leftBarButtonItem = editButtonItem
         
         viewModel.delegate = self
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -34,6 +35,22 @@ class ViewController: UITableViewController {
         let contact = contacts[indexPath.row] as ElevenContact
         cell.textLabel?.text = "\(contact.firstName) \(contact.lastName)"
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let deleteContact = contacts[indexPath.row] as ElevenContact
+            viewModel.delete(context: context, contactId: deleteContact.contactId)
+            contacts.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            viewModel.retireveContacts(context: context)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 
     // MARK: Actions
